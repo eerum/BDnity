@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width" , initial-scale="1">
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/custom.css">
+<title>JSP 게시판 웹 사이트</title>
+<style type="text/css">
+a, a:hover {
+	color: #000000;
+	text-decoration: none;
+}
+</style>
+</head>
+<body>
+
+	<script>
+        var userID = null;
+        var userIDFromSession = "<%= session.getAttribute("userID") %>";
+        
+        if (userIDFromSession !== "null") {
+            userID = userIDFromSession;
+        }
+        
+        var searchField = "<%= request.getParameter("searchField") %>";
+        var searchText = "<%= request.getParameter("searchText") %>";
+        
+        if (searchField === "0" || searchText === "" || searchField === "0" || searchText === "") {
+            alert('입력이 안 된 사항이 있습니다.');
+            history.back();
+        }
+        
+        var pageNumber = 1;
+        var pageNumberParam = "<%= request.getParameter("pageNumber") %>";
+        
+        if (pageNumberParam !== null) {
+            pageNumber = parseInt(pageNumberParam);
+        }
+    </script>
+
+	<nav class="navbar navbar-inverse">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed"
+				data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+				aria-expanded="false">
+				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="main.html">배둥니티</a>
+		</div>
+		<div class="collapse navbar-collapse"
+			id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li><a href="main.html">Community</a></li>
+				<li class="active"><a href="bbs.html">글 작성</a></li>
+			</ul>
+
+			<script>
+				if (userID == null) {
+			</script>
+			<ul class="nav navbar-nav navbar-right">
+				<li class="dropdown"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown" role="button" aria-haspopup="true"
+					aria-expanded="false">로그인/회원가입<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="login.html">로그인</a></li>
+						<li><a href="join.html">회원가입</a></li>
+					</ul></li>
+			</ul>
+
+			<script>
+				} else {//로그인이 되어있다면
+			</script>
+
+			<ul class="nav navbar-nav navbar-right">
+				<li class="dropdown"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown" role="button" aria-haspopup="true"
+					aria-expanded="false">회원관리<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="logoutAction.html">로그아웃</a></li>
+						<li><a href="userUpdate.html">내 정보</a></li>
+					</ul></li>
+			</ul>
+			<script>
+				}
+			</script>
+
+		</div>
+	</nav>
+
+	
+	<div class="container">
+        <div class="row">
+            <form method="post" name="search" action="searchbbs.html">
+                <div class="alert alert-info">
+                    <strong>오늘은 <span id="currentDate"></span> 입니다.</strong> 오늘을 공유해주세요 💜
+                </div>
+                <script>
+                   
+                    var currentDate = new Date();
+                    var year = currentDate.getFullYear();
+                    var month = currentDate.getMonth() + 1;
+                    var day = currentDate.getDate();
+                    document.getElementById("currentDate").textContent = year + "년 " + month + "월 " + day + "일";
+                </script>
+                <table class="pull-right">
+                    <tr>
+                        <td>
+                            <select class="form-control" name="searchField">
+                                <option value="0">선택</option>
+                                <option value="bbsTitle">제목</option>
+                                <option value="userID">작성자</option>
+                            </select>
+                        </td>
+                        <td><input type="text" class="form-control" placeholder="검색어 입력" name="searchText" maxlength="100"></td>
+                        <td><button type="submit" class="btn btn-success">검색</button></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div> 
+	 
+
+				</table>
+			</form>
+		</div>
+	</div>
+	<br>
+	<div class="container">
+		<div class="row">
+			<table class="active table table-striped"
+				style="text-align: center; border: 1px solid #dddddd">
+				<thead>
+					<tr>
+						<th style="background-color: #aebbca9c; text-align: center;">번호</th>
+						<th style="background-color: #aebbca9c; text-align: center;">제목</th>
+						<th style="background-color: #aebbca9c; text-align: center;">작성자</th>
+						<th style="background-color: #aebbca9c; text-align: center;">작성일</th>
+						<th style="background-color: #aebbca9c; text-align: center;">조회수</th>
+						<th style="background-color: #aebbca9c; text-align: center;">추천수</th>
+					</tr>
+				</thead>
+				<tbody>
+	<script>
+        
+        var searchResults = []; 
+        if (searchResults.length === 0) {
+            alert('검색결과가 없습니다.');
+           
+        } else {
+            for (var i = 0; i < searchResults.length; i++) {
+                var resultElement = document.createElement('div');
+                resultElement.textContent = searchResults[i]; 
+                document.getElementById('searchResults').appendChild(resultElement);
+            }
+        }
+    </script>
+
+
+	<table>
+    <tbody>
+        <!-- Loop through the data and generate table rows -->
+        <tr>
+    <td><a href="view.html?bbsID=<%=list.get(i).getBbsID()%>"><%=list.get(i).getBbsTitle().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>")%></a></td>
+    <td><%=list.get(i).getUserID()%></td>
+    <td><%=list.get(i).getBbsDate().substring(0, 11) + list.get(i).getBbsDate().substring(11, 13) + "시" + list.get(i).getBbsDate().substring(14, 16) + "분"%></td>
+    <td><%=list.get(i).getBbsCount()%></td>
+    <td><%=list.get(i).getLikeCount()%></td>
+</tr>
+
+        <!-- Loop end -->
+    </tbody>
+</table>
+
+<div class="container text-center">
+        <!-- Pagination links -->
+        <script> if (pageNumber > 1) { </script>
+        <a href="bbs.html?pageNumber=<%=pageNumber - 1%>">◀ 이전</a>
+        <script> } </script>
+        <script>
+            int n = (int) (bbsDAO.getCount() / 10 + 1);
+            for (int i = 1; i <= n; i++) {
+        </script>
+        <a href="bbs.html?pageNumber=1">| 1 |</a>
+
+        <script>
+            }
+        </script>
+        <script> if (bbsDAO.nextPage(pageNumber + 1)) { </script>
+        <a href="bbs.html?pageNumber=<%=pageNumber + 1%>">다음 ▶</a>
+        <script> } </script>
+   
+        <!-- Link to write a new post -->
+        <a href="write.html" class="btn btn-success float-right">글쓰기</a>
+    </div>
+
+    <!-- Include necessary JavaScript files -->
+    <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+</body>
+</html>

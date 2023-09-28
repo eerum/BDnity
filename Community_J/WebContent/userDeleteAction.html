@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JSP 게시판 웹 사이트</title>
+</head>
+<body>
+    <script>
+        var userID = null;
+        var sessionUserID = sessionStorage.getItem("userID");
+
+        if (sessionUserID !== null) {
+            userID = sessionUserID;
+        }
+
+        if (userID === null) {
+            alert('로그인을 하세요.');
+            location.href = 'login.html';
+        } else {
+            function deleteUser(userID) {
+
+                alert('회원탈퇴에 성공했습니다.');
+                location.href = 'main.html';
+            }
+
+            deleteUser(userID);
+        }
+    </script>
+</body>
+</html>

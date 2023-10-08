@@ -6,64 +6,61 @@
 </head>
 <body>
     <script>
-        var userID = "<%= session.getAttribute('userID') %>";
-    </script>
-    <div>
-        <p>User ID: <span id="userID"></span></p>
-    </div>
-    <script>
-        // JavaScript를 사용하여 userID 값을 화면에 표시
-        document.getElementById("userID").innerText = userID;
-    </script>
-            <script>
-                alert('로그인을 하세요.');
-                location.href='login.html';
-            </script>
-            <% 
-        }
-        int bbsID = 0;
-        if(request.getParameter("bbsID")!=null)
-            bbsID = Integer.parseInt(request.getParameter("bbsID"));
+        var userID = null;
+        var bbsID = 0;
+        var commentID = 0;
 
-        int commentID = 0;
-        if(request.getParameter("commentID")!=null)
-            commentID = Integer.parseInt(request.getParameter("commentID"));
-
-        if(commentID == 0){
-            %>
-            <script>
-                alert('유효하지 않은 글입니다.');
-                location.href='bbs.html';
-            </script>
-            <% 
+        if (sessionStorage.getItem("userID") !== null) {
+            userID = sessionStorage.getItem("userID");
         }
 
-        Comment comment = new CommentDAO().getComment(commentID);
-        if(!userID.equals(comment.getUserID())){
-            %>
-            <script>
-                alert('권한이 없습니다.');
-                location.href='bbs.html';
-            </script>
-            <% 
+        var bbsIDParam = new URLSearchParams(window.location.search).get("bbsID");
+        var commentIDParam = new URLSearchParams(window.location.search).get("commentID");
+
+        if (bbsIDParam !== null) {
+            bbsID = parseInt(bbsIDParam);
+        }
+
+        if (commentIDParam !== null) {
+            commentID = parseInt(commentIDParam);
+        }
+
+        if (commentID === 0) {
+            alert("유효하지 않은 글입니다.");
+            window.location.href = "bbs.html";
+        } else if (userID === null) {
+            alert("로그인을 하세요.");
+            window.location.href = "login.html";
         } else {
-            CommentDAO commentDAO = new CommentDAO();
-            int result = commentDAO.delete(commentID);
-            if(result == -1){
-                %>
-                <script>
-                    alert('댓글 삭제에 실패했습니다.');
-                    history.back();
-                </script>
-                <% 
+            // 권한 체크 및 댓글 삭제
+            var comment = getComment(commentID);
+
+            if (userID !== comment.userID) {
+                alert("권한이 없습니다.");
+                window.location.href = "bbs.html";
             } else {
-                %>
-                <script>
-                    location.href = document.referrer;
-                </script>
-                <% 
+                var result = deleteComment(commentID);
+
+                if (result === -1) {
+                    alert("댓글 삭제에 실패했습니다.");
+                    history.back();
+                } else {
+                    // 이전 페이지로 이동
+                    window.location.href = document.referrer;
+                }
             }
         }
-    %>
+
+        // JavaScript 함수로 대체
+        function getComment(commentID) {
+        return { userID: "사용자ID" };
+        }
+
+        // JavaScript 함수로 대체
+        function deleteComment(commentID) {
+            return 0; 
+            return 1;
+        }
+    </script>
 </body>
 </html>

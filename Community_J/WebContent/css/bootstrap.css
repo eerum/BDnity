@@ -2820,25 +2820,25 @@ select[multiple].input-lg {
 .has-success.checkbox label,
 .has-success.radio-inline label,
 .has-success.checkbox-inline label {
-  color: #3c763d;
+  color: #3c6576;                 /* #3c763d에서 #3c6576로 수정 */
 }
 .has-success .form-control {
-  border-color: #3c763d;
+  border-color: #3c6576;          /* #3c763d에서 #3c6576로 수정 */
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
           box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
 }
 .has-success .form-control:focus {
-  border-color: #2b542c;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #67b168;
-          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #67b168;
+  border-color: #2b4854;         /* #2b542c에서 #2b4854로 수정 */
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #679eb1;   /* #67b168에서 #679eb1로 수정 */
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #679eb1;   /* #67b168에서 #679eb1로 수정 */
 }
 .has-success .input-group-addon {
-  color: #3c763d;
+  color: #3c6576;               /* #3c763d에서 #3c6576로 수정 */
   background-color: #dff0d8;
-  border-color: #3c763d;
+  border-color: #3c6576;        /* #3c763d에서 #3c6576로 수정 */
 }
 .has-success .form-control-feedback {
-  color: #3c763d;
+  color: #3c6576;              /* #3c763d에서 #3c6576로 수정 */
 }
 .has-warning .help-block,
 .has-warning .control-label,
@@ -3172,26 +3172,26 @@ fieldset[disabled] .btn-primary.focus {
 }
 .btn-success {
   color: #fff;
-  background-color: #5cb85c;
-  border-color: #4cae4c;
+  background-color: #5c8db8;      /* 버튼 색상,   #3f5466에서 #5c8db8로 수정 */          
+  border-color: #657e95;          /* #4cae4c에서 #657e95로 수정, 3181줄부터 3207줄까지 초록에서 파랑으로 수정 완 */
 }
 .btn-success:focus,
 .btn-success.focus {
   color: #fff;
-  background-color: #449d44;
-  border-color: #255625;
+  background-color: #5c8db8;
+  border-color: #32393f;
 }
 .btn-success:hover {
   color: #fff;
-  background-color: #449d44;
-  border-color: #398439;
+  background-color: #44969d;       /* 마우스(?)를 버튼 위에 놓으면 나타나는 색상 */  
+  border-color: #397384;
 }
 .btn-success:active,
 .btn-success.active,
 .open > .dropdown-toggle.btn-success {
   color: #fff;
-  background-color: #449d44;
-  border-color: #398439;
+  background-color: #44969d;
+  border-color: #397384;
 }
 .btn-success:active:hover,
 .btn-success.active:hover,
@@ -3203,8 +3203,8 @@ fieldset[disabled] .btn-primary.focus {
 .btn-success.active.focus,
 .open > .dropdown-toggle.btn-success.focus {
   color: #fff;
-  background-color: #398439;
-  border-color: #255625;
+  background-color: #5c8db8;
+  border-color: #32393f;
 }
 .btn-success:active,
 .btn-success.active,
@@ -3220,11 +3220,11 @@ fieldset[disabled] .btn-success:focus,
 .btn-success.disabled.focus,
 .btn-success[disabled].focus,
 fieldset[disabled] .btn-success.focus {
-  background-color: #5cb85c;
-  border-color: #4cae4c;
+  background-color: #5c8db8;
+  border-color: #657e95;
 }
 .btn-success .badge {
-  color: #5cb85c;
+  color: #5c8db8;
   background-color: #fff;
 }
 .btn-info {
@@ -4882,11 +4882,11 @@ a.label:focus {
   background-color: #286090;
 }
 .label-success {
-  background-color: #5cb85c;
+  background-color: #5c8db8;          /* #5cb85c이 색에서 #5c8db8으로 수정 */
 }
 .label-success[href]:hover,
 .label-success[href]:focus {
-  background-color: #449d44;
+  background-color: #4f6f8a;          /* #449d44이 색에서 #4f6f8a으로 수정 */
 }
 .label-info {
   background-color: #5bc0de;
@@ -5349,8 +5349,8 @@ button.list-group-item-success.active:hover,
 a.list-group-item-success.active:focus,
 button.list-group-item-success.active:focus {
   color: #fff;
-  background-color: #3c763d;
-  border-color: #3c763d;
+  background-color: #4f6f8a;     /* #3c763d에서 #4f6f8a로 수정 */
+  border-color: #4f6f8a;         /* #3c763d에서 #4f6f8a로 수정 */
 }
 .list-group-item-info {
   color: #31708f;

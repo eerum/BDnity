@@ -7,9 +7,9 @@
 <body>
 	<script>
         var userID = null;
-        <% if(session.getAttribute("userID")!=null){ %>
+        if(session.getAttribute("userID")!=null){
             userID = '<%= session.getAttribute("userID") %>';
-        <% } %>
+        }
         
         if (userID == null) {
             alert('로그인을 하세요.');
@@ -17,16 +17,16 @@
         }
         
         var bbsID = 0;
-        <% if(request.getParameter("bbsID")!=null) { %>
-            bbsID = <%= Integer.parseInt(request.getParameter("bbsID")) %>;
-        <% } %>
+        if(request.getParameter("bbsID")!=null) {
+            bbsID == Integer.parseInt(request.getParameter("bbsID"));
+        }
         
         if (bbsID == 0) {
             alert('유효하지 않은 글입니다.');
             window.location.href = 'bbs.html';
         }
         
-        var bbs = '<%= new BbsDAO().getBbs(bbsID) %>';
+        var bbs = '= new BbsDAO().getBbs(bbsID)';
         
         if (userID !== bbs.userID) {
             alert('권한이 없습니다.');

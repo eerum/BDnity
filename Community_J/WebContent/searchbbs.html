@@ -97,7 +97,6 @@ a, a:hover {
                     <strong>오늘은 <span id="currentDate"></span> 입니다.</strong> 💙학과 관련 정보를 공유하며 소통하세요💙
                 </div>
                 <script>
-                   
                     var currentDate = new Date();
                     var year = currentDate.getFullYear();
                     var month = currentDate.getMonth() + 1;
@@ -120,7 +119,6 @@ a, a:hover {
             </form>
         </div>
     </div> 
-	 
 
 				</table>
 			</form>
@@ -147,7 +145,6 @@ a, a:hover {
         var searchResults = []; 
         if (searchResults.length === 0) {
             alert('검색결과가 없습니다.');
-           
         } else {
             for (var i = 0; i < searchResults.length; i++) {
                 var resultElement = document.createElement('div');
@@ -190,7 +187,6 @@ a, a:hover {
         <script> if (bbsDAO.nextPage(pageNumber + 1)) { </script>
         <a href="bbs.html?pageNumber=<%=pageNumber + 1%>">다음 ▶</a>
         <script> } </script>
-   
         <!-- Link to write a new post -->
         <a href="write.html" class="btn btn-success float-right">글쓰기</a>
     </div>

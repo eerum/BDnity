@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+.header{
+    color: #000;
+    text-align: center;
+    font-family: Anek Tamil;
+    font-size: 4.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 1px ;
+}
+.header_logo{
+    font-size: 45px;
+    color: white;
+}
+label {
+    line-height: 2.3rem;
+}
+input[type="submit"] {
+transform: translate(2.2%);
+padding: 5px;
+margin-top: 0.9rem;
+font-weight: bold;
+}
+fieldset {
+padding: 40px 30px;
+}
+.login{
+    color: #000;
+text-align: center;
+font-family: Anek Tamil;
+font-size: 1rem;
+font-style: normal;
+font-weight: 200;
+line-height: normal;
+text-decoration-line: underline;
+}

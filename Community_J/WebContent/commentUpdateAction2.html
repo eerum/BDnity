@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>JSP 게시판 웹 사이트</title>
+</head>
+<body>
+    <script>
+        alert('로그인을 하세요.');
+        location.href='sw2.html';
+    </script>
+    <script>
+        alert('유효하지 않은 글입니다.');
+        location.href='main2.html';
+    </script>
+    <script>
+        alert('권한이 없습니다.');
+        location.href='main2.html';
+    </script>
+    <script>
+        alert('입력이 안 된 사항이 있습니다.');
+        history.back();
+    </script>
+    <script>
+        alert('댓글 수정에 실패했습니다.');
+        history.back();
+    </script>
+    <script>
+        location.href= 'view2.html?bbsID=0';
+    </script>
+</body>
+</html>

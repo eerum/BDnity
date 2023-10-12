@@ -36,7 +36,7 @@
 
         if (bbsID === 0) {
             alert("유효하지 않은 글입니다.");
-            window.location.href = 'main.html';
+            window.location.href = 'main3.html';
         }
 
         
@@ -45,7 +45,7 @@
             .then(data => {
                 if (data.userID !== userID) {
                     alert("권한이 없습니다.");
-                    window.location.href = 'main.html';
+                    window.location.href = 'main3.html';
                 }
                 document.body.innerHTML = data.content;
             })
@@ -65,12 +65,13 @@
 				<span class ="icon-bar"></span>
 				<span class ="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="main.html">배둥니티</a>
+			<a class="navbar-brand" href="main3.html">배둥니티</a>
 		</div>
 		
+
 	<div class="container">
 		<div class="row">
-			<form method="post" action="updateAction.html?bbsID=<%=bbsID%>"> 
+			<form method="post" action="updateAction3.html?bbsID=<%=bbsID%>"> 
 				<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
 					<thead>
 						<tr>

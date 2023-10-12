@@ -21,7 +21,7 @@
     }
     if (bbsID === 0) {
         alert('유효하지 않은 글입니다.');
-        location.href = 'main.html';
+        location.href = 'main2.html';
     }
     var result = 0; // Define 'result' appropriately
 
@@ -29,14 +29,14 @@
         result = 1; // Call your 'like' function here
         if (result === 1) {
             alert('추천이 완료되었습니다.');
-            location.href = 'view.html?bbsID=' + bbsID;
+            location.href = 'view2.html?bbsID=' + bbsID;
         } else {
             alert('데이터베이스 오류가 발생했습니다.');
             history.back();
         }
     } else {
         alert('이미 추천을 누른 글입니다.');
-        location.href = 'main.html';
+        location.href = 'main2.html';
     }
 </script>
 </body>

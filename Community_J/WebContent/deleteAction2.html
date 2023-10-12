@@ -30,7 +30,7 @@
 
         if (bbsID == 0) {
             alert('유효하지 않은 글입니다.');
-            location.href = 'main.html';
+            location.href = 'main2.html';
         }
 
         // Bbs 객체를 가져오는 코드 (가정)
@@ -39,7 +39,7 @@
 
         if (!userID.equals(bbs.getUserID())) {
             alert('권한이 없습니다.');
-            location.href = 'main'.html';
+            location.href = 'main2.html';
         } else {
             // BbsDAO를 사용하여 게시물 삭제
             // 여기에 bbsDAO.delete(bbsID) 코드를 텍스트로 표시하세요.
@@ -49,7 +49,7 @@
                 alert('글 삭제에 실패했습니다.');
                 history.back();
             } else {
-                location.href = 'main.html?pageNumber=1';
+                location.href = 'main2.html?pageNumber=1';
             }
         }
     </script>

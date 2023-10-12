@@ -20,7 +20,7 @@
         }
         if (bbsID === 0) {
             alert('유효하지 않은 글입니다.');
-            window.location.href = 'main.html';
+            window.location.href = 'main2.html';
         }
 
         
@@ -41,7 +41,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="main.html">배둥니티</a>
+        <a class="navbar-brand" href="main2.html">배둥니티</a>
     </div>
     
 </nav>
@@ -97,14 +97,14 @@
 						</tr>
 					</tbody>
 				</table>
-				<a href="main.html" class="btn btn-success">목록</a>
-				<a href="likeAction.html?bbsID=<%=bbsID %>" class="btn btn-success pull-right">👍</a>
+				<a href="main2.html" class="btn btn-success">목록</a>
+				<a href="likeAction2.html?bbsID=<%=bbsID %>" class="btn btn-success pull-right">👍</a>
 				
 				<script>
 					if(userID != null && userID.equals(bbs.getUserID())){
 				</script>
-						<a href="update.html?bbsID=<%=bbsID%>" class="btn btn-warning">수정</a>
-						<a onclick="return confirm('정말로 삭제하시겠습니까?')" href="deleteAction.html?bbsID=<%=bbsID%>" class="btn btn-danger">삭제</a>
+						<a href="update2.html?bbsID=<%=bbsID%>" class="btn btn-warning">수정</a>
+						<a onclick="return confirm('정말로 삭제하시겠습니까?')" href="deleteAction2.html?bbsID=<%=bbsID%>" class="btn btn-danger">삭제</a>
 				<script>
 					}
 				</script>
@@ -134,8 +134,8 @@
                   		
                   		<tr>
                   			<td align="left"><%= list.get(i).getCommentContent() %></td>
-                  			<td align="right"><a href="commentUpdate.html?bbsID=<%=bbsID%>&commentID=<%=list.get(i).getCommentID()%>" class="btn btn-warning">수정</a>
-                  			<a onclick="return confirm('정말로 삭제하시겠습니까?')" href="commentDeleteAction.html?bbsID=<%=bbsID%>&commentID=<%=list.get(i).getCommentID() %>" class="btn btn-danger">삭제</a></td>
+                  			<td align="right"><a href="commentUpdate2.html?bbsID=<%=bbsID%>&commentID=<%=list.get(i).getCommentID()%>" class="btn btn-warning">수정</a>
+                  			<a onclick="return confirm('정말로 삭제하시겠습니까?')" href="commentDeleteAction2.html?bbsID=<%=bbsID%>&commentID=<%=list.get(i).getCommentID() %>" class="btn btn-danger">삭제</a></td>
                   		</tr>
                   	</tbody>
                   	</table>
@@ -150,7 +150,7 @@
       </div><br>
 	<div class="container">
       <div class="row">
-            <form method="post" action="submitAction.html?bbsID=<%= bbsID %>">
+            <form method="post" action="submitAction2.html?bbsID=<%= bbsID %>">
             <table class="table table-bordered" style="text-align: center; border: 1px solid #dddddd">
                <tbody>
                   <tr>

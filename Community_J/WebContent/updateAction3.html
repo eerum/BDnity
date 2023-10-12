@@ -23,14 +23,14 @@
         
         if (bbsID == 0) {
             alert('유효하지 않은 글입니다.');
-            window.location.href = 'main.html';
+            window.location.href = 'main3.html';
         }
         
         var bbs = '= new BbsDAO().getBbs(bbsID)';
         
         if (userID !== bbs.userID) {
             alert('권한이 없습니다.');
-            window.location.href = 'main.html';
+            window.location.href = 'main3.html';
         } else {
             var bbsTitle = '<%= request.getParameter("bbsTitle") %>';
             var bbsContent = '<%= request.getParameter("bbsContent") %>';
@@ -56,7 +56,7 @@
                         alert('글 수정에 실패했습니다.');
                         history.back();
                     } else {
-                        window.location.href = 'main.html?pageNumber=1';
+                        window.location.href = 'main3.html?pageNumber=1';
                     }
                 });
             }

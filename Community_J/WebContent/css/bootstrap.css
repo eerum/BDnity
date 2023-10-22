@@ -3286,26 +3286,26 @@ fieldset[disabled] .btn-info.focus {
 }
 .btn-warning {
   color: #fff;
-  background-color: #f0ad4e;
-  border-color: #eea236;
+  background-color: #b9b7ac;       /* view.html의 수정 버튼 색상, 3289줄~3321줄까지 회색으로(?) 색상변경 */
+  border-color: #989890;
 }
 .btn-warning:focus,
 .btn-warning.focus {
   color: #fff;
-  background-color: #ec971f;
-  border-color: #985f0d;
+  background-color: #b9b7ac;
+  border-color: #989890;
 }
 .btn-warning:hover {
   color: #fff;
-  background-color: #ec971f;
-  border-color: #d58512;
+  background-color: #a09f95;
+  border-color: #86867f;
 }
 .btn-warning:active,
 .btn-warning.active,
 .open > .dropdown-toggle.btn-warning {
   color: #fff;
-  background-color: #ec971f;
-  border-color: #d58512;
+  background-color: #a09f95;
+  border-color: #86867f;
 }
 .btn-warning:active:hover,
 .btn-warning.active:hover,
@@ -3317,8 +3317,8 @@ fieldset[disabled] .btn-info.focus {
 .btn-warning.active.focus,
 .open > .dropdown-toggle.btn-warning.focus {
   color: #fff;
-  background-color: #d58512;
-  border-color: #985f0d;
+  background-color: #a09f95;
+  border-color: #86867f;
 }
 .btn-warning:active,
 .btn-warning.active,
@@ -3343,26 +3343,26 @@ fieldset[disabled] .btn-warning.focus {
 }
 .btn-danger {
   color: #fff;
-  background-color: #ff7700;  /* #d9534f에서 #ff7700로 변경, 회원관리 내정보에 있는 탈퇴하기 버튼 색상 */
-  border-color: #d4723a;      /* #d43f3a에서 #d4723a로 변경, 회원관리 내정보에 있는 탈퇴하기 버튼 선 색상 */
+  background-color: #e92929;  /* #d9534f에서 #e92929로 변경, view.html의 삭제 버튼의 버튼 색상 */
+  border-color: #a12d2d;      /* #d43f3a에서 #a12d2d로 변경, view.html의 삭제 버튼의 버튼 선 색상 */
 }
 .btn-danger:focus,
 .btn-danger.focus {
   color: #fff;
-  background-color: #ea7b48;    /* #c9302c에서 #ea7b48로 변경 */
-  border-color: #763b19;       /* #763e19에서 #763b19로 변경 */
+  background-color: #e92929;    /* #c9302c에서 #e92929로 변경 */
+  border-color: #a12d2d;       /* #763e19에서 #a12d2d로 변경 */
 }
 .btn-danger:hover {
   color: #fff;
-  background-color: #ea7b48;  /* #c9302c에서 #ea7b48로 변경, 회원관리 내정보에 있는 탈퇴하기 버튼에 화살표 올려놓을 시에 버튼 색상 */
-  border-color: #bc6c33;     /* #ac2925에서 #bc6c33로 변경, 회원관리 내정보에 있는 탈퇴하기 버튼에 화살표 올려놓을 시에 버튼 선 색상  */
+  background-color: #ca2424;  /* #c9302c에서 #ca2424로 변경, view.html의 삭제 버튼에 화살표 올려놓을 시에 버튼 색상 */
+  border-color: #ab2424;     /* #ac2925에서 #ab2424로 변경, view.html의 삭제 버튼에 화살표 올려놓을 시에 버튼 선 색상  */
 }
 .btn-danger:active,
 .btn-danger.active,
 .open > .dropdown-toggle.btn-danger {
   color: #fff;
-  background-color: #ea7b48;    /* #c9302c에서 #ea7b48로 변경 */
-  border-color: #bc6c33;        /* #ac2925에서 #bc6c33로 변경, 밑에 색상 두 코드도 수정함 */
+  background-color: #ca2424;    /* #c9302c에서 #ca2424로 변경 */
+  border-color: #ab2424;        /* #ac2925에서 #ab2424로 변경, 밑에 색상 두 코드도 수정함 */
 }
 .btn-danger:active:hover,
 .btn-danger.active:hover,
@@ -3374,8 +3374,8 @@ fieldset[disabled] .btn-warning.focus {
 .btn-danger.active.focus,
 .open > .dropdown-toggle.btn-danger.focus {
   color: #fff;
-  background-color: #bc6c33;     
-  border-color: #763b19;
+  background-color: #c62c2c;     
+  border-color: #8f2222;
 }
 .btn-danger:active,
 .btn-danger.active,

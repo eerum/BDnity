@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>JSP 게시판 웹 사이트</title>
+    <title>글 삭제</title>
 </head>
 <body>
     <script>
@@ -39,7 +39,7 @@
 
         if (!userID.equals(bbs.getUserID())) {
             alert('권한이 없습니다.');
-            location.href = 'main'.html';
+            location.href = 'main.html';
         } else {
             // BbsDAO를 사용하여 게시물 삭제
             // 여기에 bbsDAO.delete(bbsID) 코드를 텍스트로 표시하세요.

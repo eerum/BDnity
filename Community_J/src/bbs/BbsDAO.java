@@ -59,14 +59,14 @@ public class BbsDAO {
 		String SQL="INSERT INTO BBS VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 		try {
 			PreparedStatement pstmt=conn.prepareStatement(SQL);
-			pstmt.setInt(1, getNext());//게시글 번호
-			pstmt.setString(2, bbsTitle);//제목
-			pstmt.setString(3, userID);//아이디
-			pstmt.setString(4, getDate());//날짜
-			pstmt.setString(5, bbsContent);//내용
-			pstmt.setInt(6, 1);//삭제된 경우가 아니기 때문에 1을 넣어줌
-			pstmt.setInt(7, bbsCount);
-			pstmt.setInt(8, LikeCount);
+			//pstmt.setInt(1, getNext());//게시글 번호
+			pstmt.setString(1, bbsTitle);//제목
+			pstmt.setString(2, userID);//아이디
+			pstmt.setString(3, getDate());//날짜
+			pstmt.setString(4, bbsContent);//내용
+			pstmt.setInt(5, 1);//삭제된 경우가 아니기 때문에 1을 넣어줌
+			pstmt.setInt(6, bbsCount);
+			pstmt.setInt(7, LikeCount);
 			return pstmt.executeUpdate();			
 		} catch(Exception e) {
 			e.printStackTrace();

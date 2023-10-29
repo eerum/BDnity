@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>JSP 게시판 웹 사이트</title>
+    <title>댓글 삭제 버튼을 누르면 실행 되는 페이지</title>
 </head>
 <body>
     <script>
@@ -27,17 +27,17 @@
 
         if (commentID === 0) {
             alert("유효하지 않은 글입니다.");
-            window.location.href = "bbs.html";
+            window.location.href = "main.html";
         } else if (userID === null) {
             alert("로그인을 하세요.");
-            window.location.href = "login.html";
+            window.location.href = "sw2.html";
         } else {
             // 권한 체크 및 댓글 삭제
             var comment = getComment(commentID);
 
             if (userID !== comment.userID) {
                 alert("권한이 없습니다.");
-                window.location.href = "bbs.html";
+                window.location.href = "main.html";
             } else {
                 var result = deleteComment(commentID);
 

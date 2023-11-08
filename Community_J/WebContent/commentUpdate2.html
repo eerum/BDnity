@@ -17,11 +17,11 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="sw0.html">배둥니티</a>
+      <a class="navbar-brand" href="sw0.html"><img src="D:\Community_J\WebContent\images\BDnity.png" style="width:80px; height:20px;"></a>
     </div>
-    <% if (userID == null) { %>
+   <!--<% if (userID == null) { %>
     <% } else { %>
-    <% } %>
+    <% } %>-->
   </nav>
   <div class="container">
     <div class="row">
@@ -36,33 +36,38 @@
             <td style="width: 20%">글 제목</td>
             <td colspan="2">
               <!-- Display the title content here -->
-              <%= bbs.getTitle() %>
+              <!--<%= bbs.getTitle() %>-->
+              보안 관련 질문!!!
             </td>
           </tr>
           <tr>
             <td>글쓴이</td>
             <td colspan="2">
               <!-- Display the author content here -->
-              <%= bbs.getAuthor() %>
+              <!--<%= bbs.getAuthor() %>-->
+              윤파랑
             </td>
           </tr>
           <tr>
             <td>작성 날짜</td>
             <td colspan="2">
               <!-- Display the date content here -->
-              <%= bbs.getWriteDate() %>
+              <!--<%= bbs.getWriteDate() %>-->
+              2023.11.09
             </td>
           </tr>
           <tr>
             <td>글 내용</td>
             <td colspan="2" style="min-height: 200px; text-align: left;">
               <!-- Display the content here -->
-              <%= bbs.getContent() %>
+              <!--<%= bbs.getContent() %>-->
+              배둥이들 보안 관련 자격증 중에서 필수적으로 따야 되는 게 뭐가 있을까?
+							그리고 자격증 딸 때 보면 좋은 책도 추천 부탁해^^
             </td>
           </tr>
         </tbody>
       </table>
-      <a href="main2.html" class="btn btn-success">목록</a>
+    
       <a href="#" class="btn btn-warning">수정</a>
       <a onclick="return confirm('정말로 삭제하시겠습니까?')" href="#" class="btn btn-danger">삭제</a>
       <br><br>
@@ -75,10 +80,11 @@
               </tr>
               <!-- Add your comment display logic here -->
               <!-- Example: Loop through comments and display them -->
-              <%
+              
+              <!--<%
                 List<Comment> comments = new CommentDAO().getCommentsForBbs(bbsID);
                 for (Comment comment : comments) {
-              %>
+              %>-->
               <tr>
                 <td>
                   <%= comment.getContent() %>
@@ -86,7 +92,9 @@
                 </td>
               </tr>
               <!-- End of loop -->
-              <% } %>
+
+               <!--<% } %>-->
+               
               <!-- Comment form -->
               <div class="container">
                 <div class="row">
